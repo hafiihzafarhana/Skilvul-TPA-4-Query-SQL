@@ -1,0 +1,1 @@
+CREATE DATABASE hafi_store;

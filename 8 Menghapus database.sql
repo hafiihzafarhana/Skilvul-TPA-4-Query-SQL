@@ -1,0 +1,1 @@
+DROP DATABASE hafi_store;
