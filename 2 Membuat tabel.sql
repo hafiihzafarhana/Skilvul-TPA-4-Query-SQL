@@ -79,18 +79,20 @@ CREATE TABLE barang(
 
 CREATE TABLE keranjang(
 	id_keranjang int NOT NULL,
+    id_pengguna int NOT NULL,
     id_barang int NOT NULL,
     kuantitas SMALLINT NOT NULL,
     sub_total int NOT NULL,
-    FOREIGN KEY (id_barang) REFERENCES barang(id_barang)
+    FOREIGN KEY (id_barang) REFERENCES barang(id_barang),
+    FOREIGN KEY (id_pengguna) REFERENCES pengguna(id_pengguna)
 );
 
 CREATE TABLE riwayat_transaksi(
 	id_riwayat_transaksi int NOT NULL AUTO_INCREMENT,
     id_keranjang int NOT NULL,
-	id_pengguna int NOT NULL,
     total int NOT NULL,
     createdAt DATE NOT NULL,
-    PRIMARY KEY (id_riwayat_transaksi),
-    FOREIGN KEY (id_pengguna) REFERENCES pengguna(id_pengguna)
+    PRIMARY KEY (id_riwayat_transaksi)
 );
+
+desc barang;
